@@ -1,9 +1,11 @@
 package net.nanquanyuhao.paasdemo.redis;
 
 import net.nanquanyuhao.paasdemo.redis.pojo.User;
+import net.nanquanyuhao.paasdemo.redis.service.PersonService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
@@ -19,6 +21,10 @@ public class ApplicationTests {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Autowired
+    @Qualifier("RedisPersonService")
+    private PersonService personService;
 
     /**
      * 添加一个字符串
@@ -83,5 +89,12 @@ public class ApplicationTests {
         this.redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(User.class));
         User user = (User) this.redisTemplate.opsForValue().get("user_json");
         System.out.println(user);
+    }
+
+    @Test
+    public void testSpringCloud() {
+        personService.save("李四");
+        System.out.println(personService.getPersonsByCustom());
+        System.out.println(personService.getPersons());
     }
 }

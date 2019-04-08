@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by nanquanyuhao on 2017/11/26.
  */
-@Service
+@Service("MongoPersonService")
 public class PersonService {
 
     @Autowired
