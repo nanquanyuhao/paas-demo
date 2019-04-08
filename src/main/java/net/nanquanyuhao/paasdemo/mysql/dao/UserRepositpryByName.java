@@ -12,10 +12,29 @@ import java.util.List;
  */
 public interface UserRepositpryByName extends Repository<User, Integer> {
 
-    // 方法的名称必须要遵循驼峰是明明规则。findBy（关键字） + 属性名称（首字母要大写） + 查询条件（首字母要大写）
+    // 方法的名称必须要遵循驼峰是命名规则。findBy（关键字） + 属性名称（首字母要大写） + 查询条件（首字母要大写）
+    /**
+     * 据名称查询
+     *
+     * @param name
+     * @return
+     */
     List<User> findByName(String name);
 
+    /**
+     * 据名称与年龄查询
+     *
+     * @param name
+     * @param age
+     * @return
+     */
     List<User> findByNameAndAge(String name, Integer age);
 
+    /**
+     * 据名称模糊查询
+     *
+     * @param name
+     * @return
+     */
     List<User> findByNameLike(String name);
 }

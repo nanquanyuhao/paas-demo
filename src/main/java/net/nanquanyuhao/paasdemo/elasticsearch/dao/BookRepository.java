@@ -10,7 +10,21 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  */
 public interface BookRepository extends ElasticsearchRepository<Book, String> {
 
+    /**
+     * 通过作者分页查询
+     *
+     * @param author
+     * @param pageable
+     * @return
+     */
     Page<Book> findByAuthor(String author, Pageable pageable);
 
+    /**
+     * 通过标题分页查询
+     *
+     * @param title
+     * @param pageable
+     * @return
+     */
     Page<Book> findByTitle(String title, Pageable pageable);
 }
