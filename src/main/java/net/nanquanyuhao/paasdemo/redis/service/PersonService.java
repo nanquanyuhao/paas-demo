@@ -37,6 +37,16 @@ public class PersonService {
     }
 
     /**
+     * 据名称查询实例
+     *
+     * @param name
+     * @return
+     */
+    public List<Person> getPersonsByName(String name) {
+        return personRepo.findByName(name);
+    }
+
+    /**
      * 自定义接口查询
      *
      * @return

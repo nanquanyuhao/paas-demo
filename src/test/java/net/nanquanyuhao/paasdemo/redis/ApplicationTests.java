@@ -96,5 +96,6 @@ public class ApplicationTests {
         personService.save("李四");
         System.out.println(personService.getPersonsByCustom());
         System.out.println(personService.getPersons());
+        System.out.println(personService.getPersonsByName("李四"));
     }
 }
