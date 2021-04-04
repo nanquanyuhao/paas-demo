@@ -23,6 +23,15 @@ public class ApplicationTests {
     private PersonService personService;
 
     @Test
+    public void contextAddLoads() {
+        Person p = new Person();
+        p.setAge(30);
+        p.setCompany("产互公司山东");
+        p.setName("人员甲");
+        personService.save(p);
+    }
+
+    @Test
     public void contextLoads() {
         List<Person> list = personService.findAll();
         System.out.println(list);

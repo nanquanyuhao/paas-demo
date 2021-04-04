@@ -31,7 +31,7 @@ public class ApplicationTests {
      */
     @Test
     public void contextLoads() {
-        this.redisTemplate.opsForValue().set("key", "北京尚学堂");
+        this.redisTemplate.opsForValue().set("key", "产互公司");
     }
 
     /**

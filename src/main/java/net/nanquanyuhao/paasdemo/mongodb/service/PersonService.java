@@ -20,6 +20,10 @@ public class PersonService {
         return personDao.findAll();
     }
 
+    public Person save(Person p) {
+        return personDao.save(p);
+    }
+
     public List<Person> myQuery() {
         return personDao.myQuery();
     }
